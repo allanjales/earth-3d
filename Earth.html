@@ -70,8 +70,8 @@ void main()
 	var earthRamp = new THREE.MeshLambertMaterial({color: 0xffffff});
 	var earthMaterial = earthDayMaterial;
 	var earthSphere = new THREE.Mesh(earthGeometry, earthMaterial);
-	earthSphere.castShadow = true;
-	earthSphere.receiveShadow = true;
+	//earthSphere.castShadow = true;
+	//earthSphere.receiveShadow = true;
 	scene.add(earthSphere);
 
 	/*
@@ -88,8 +88,8 @@ void main()
 	var cloudSphere = new THREE.Mesh(cloudGeometry, cloudMaterial);
 	var depthMaterial = new THREE.MeshDepthMaterial({map: clouds, alphaTest: 0.8});
 	cloudSphere.customDepthMaterial = depthMaterial;
-	cloudSphere.castShadow = true;
-	cloudSphere.receiveShadow = true;
+	//cloudSphere.castShadow = true;
+	//cloudSphere.receiveShadow = true;
 	earthSphere.add(cloudSphere);
 
 	//Atmosphere
@@ -166,12 +166,14 @@ void main()
 	//Add directional light to scene
 	var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 	directionalLight.position.set(5, 0, 1);
-	directionalLight.castShadow = true; 
+	//directionalLight.castShadow = true; 
 	scene.add(directionalLight);
+	/*
 	directionalLight.shadow.mapSize.width = 1024*2;
 	directionalLight.shadow.mapSize.height = 1024*2;
 	directionalLight.shadow.camera.near = 0.5;
 	directionalLight.shadow.camera.far = 500;
+	*/
 
 /*
 	//Add ambient light to scene
