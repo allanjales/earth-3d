@@ -84,7 +84,7 @@ void main()
 	//Clouds
 	var cloudGeometry = new THREE.SphereGeometry(0.636, 64, 64);
 	var clouds = new THREE.TextureLoader().load("imgs/earth_clouds.jpg");
-	var cloudMaterial = new THREE.MeshPhongMaterial({map: clouds, alphaMap: clouds, bumpMap: clouds, bumpScale: 0.0005, transparent: true, side: THREE.DoubleSide});
+	var cloudMaterial = new THREE.MeshPhongMaterial({map: clouds, alphaMap: clouds, bumpMap: clouds, bumpScale: 0.0005, transparent: true});
 	var cloudSphere = new THREE.Mesh(cloudGeometry, cloudMaterial);
 	var depthMaterial = new THREE.MeshDepthMaterial({map: clouds, alphaTest: 0.8});
 	cloudSphere.customDepthMaterial = depthMaterial;
