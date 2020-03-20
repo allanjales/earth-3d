@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<title>Three.js Test</title>
+<title>Earth 3D - Allan Jales</title>
 <meta name="author" content="Allan Jales">
 <meta name="theme-color" content="#ffffff">
 <link href="cssjs/style.css" rel="stylesheet" type="text/css">
@@ -141,6 +141,7 @@ void main()
 	var skySphere = new THREE.Mesh(skyGeometry, skyMaterial);
 	scene.add(skySphere);
 
+	/*
 	//Test Cube
 	var cubeg = new THREE.CubeGeometry(0.25, 0.25, 0.25);
 	var cMaterial = new THREE.MeshPhongMaterial({color: 0x00ff00});
@@ -155,6 +156,7 @@ void main()
 	cube2.castShadow = true;
 	cube2.position.x = 1;
 	cube.position.z = 1;
+	*/
 
 	//Removes the planet from the same spot of camera and rotates a little bit
 	camera.position.x = 0.3;
@@ -206,8 +208,8 @@ void main()
 	//Animation
 	var animate = function(){
 		//Apply earth and clouds rotation
-		earthSphere.rotation.y += 0.0001;
-		cloudSphere.rotation.y -= 0.000025;
+		earthSphere.rotation.y += 0.00005;
+		cloudSphere.rotation.y -= 0.0000025;
 		
 		//Get relative camera position
 		relativeCameraVector = camera.position.clone().applyAxisAngle(new THREE.Vector3( 0, 1, 0 ), -earthSphere.rotation.y);
@@ -230,5 +232,5 @@ void main()
 	}
 	animate();
 
-	requestAnimationFrame( animate );
+	requestAnimationFrame(animate);
 </script>
